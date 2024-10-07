@@ -146,7 +146,7 @@ body, html {
 }
 
 .show-env-bg-button {
-    background: red;
+    background-size: cover;
 }
 
 .hide-env-bg-button {
