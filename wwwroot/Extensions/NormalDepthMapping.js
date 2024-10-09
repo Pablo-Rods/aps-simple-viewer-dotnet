@@ -64,6 +64,7 @@ function readDepthAndNormalMaps(viewer) {
     // Create download links for the PNGs
     createDownloadLink(depthPngUrl, 'depth-image.png', 'Download Depth Image');
     createDownloadLink(normalPngUrl, 'normal-image.png', 'Download Normal Image');
+    viewer.getScreensho(w, h, img =>
 }
 
 function unpackDepth(alpha, beta) {
@@ -95,3 +96,14 @@ function createDownloadLink(pngUrl, fileName, linkText) {
     console.log(downloadLink);
     downloadLink.click();
 }
+
+function downloadScreen() {
+    var link = document.createElement('a');
+    link.href = S
+    link.download = 'Download.jpg';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+
