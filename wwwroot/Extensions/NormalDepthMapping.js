@@ -14,6 +14,8 @@ function readDepthAndNormalMaps(viewer) {
     gl.readPixels(0, 0, w, h, gl.RGBA, gl.FLOAT, pixels);
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
 
+    // Function to unpack depth from alpha channel
+
 
     // Create canvases
     const depthCanvas = document.createElement('canvas');
@@ -59,12 +61,9 @@ function readDepthAndNormalMaps(viewer) {
     const depthPngUrl = depthCanvas.toDataURL('image/png');
     const normalPngUrl = normalCanvas.toDataURL('image/png');
 
-    console.log(depthPngUrl);
-    console.log(normalPngUrl);
     // Create download links for the PNGs
     createDownloadLink(depthPngUrl, 'depth-image.png', 'Download Depth Image');
     createDownloadLink(normalPngUrl, 'normal-image.png', 'Download Normal Image');
-    viewer.getScreensho(w, h, img =>
 }
 
 function unpackDepth(alpha, beta) {
@@ -93,17 +92,5 @@ function createDownloadLink(pngUrl, fileName, linkText) {
     downloadLink.download = fileName;
     downloadLink.innerText = linkText;
     document.body.appendChild(downloadLink);
-    console.log(downloadLink);
     downloadLink.click();
 }
-
-function downloadScreen() {
-    var link = document.createElement('a');
-    link.href = S
-    link.download = 'Download.jpg';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-}
-
-

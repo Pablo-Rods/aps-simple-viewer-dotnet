@@ -145,10 +145,10 @@ body, html {
     background-size: cover;
 }
 
-.show-env-bg-button {
+.normal-button {
     background-size: cover;
 }
 
-.hide-env-bg-button {
+.snap-button {
     background: blue;
 }
